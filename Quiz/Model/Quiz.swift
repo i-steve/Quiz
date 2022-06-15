@@ -31,7 +31,7 @@ struct Quiz{
     var num = 0
     var score = 0
     
-    //progressing questions
+    //question progression
     mutating func counter(){
         if num < quizQues.count - 1{
             num += 1
