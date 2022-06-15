@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         updateUI()
     }
     
-    //when any button pressed
+    //when button pressed
     @IBAction func pressed(_ sender: UIButton) {
         
         if quiz.checkAns(sender.currentTitle!){
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 0.2, target:self , selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
-    //
+    
     @objc func updateUI(){
         questionLabel.text = quiz.updateQues()
         scoreLabel.text = "Score \(quiz.updateScore())"
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         option3.setTitle(quiz.updateOption()[2], for: .normal)
         progressiveBar.progress = quiz.progress()
         
+        //reset color
         option1.backgroundColor = UIColor.clear
         option2.backgroundColor = UIColor.clear
         option3.backgroundColor = UIColor.clear
